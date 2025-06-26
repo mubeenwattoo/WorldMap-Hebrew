@@ -57,10 +57,16 @@
     </span>
 
     <!-- Desktop Navigation -->
-    <ul class="md:flex hidden items-center gap-8 lg:text-[1.2rem] text-[0.9rem] text-white">
+    <ul class="lg:flex hidden items-center gap-4 lg:text-[1.1rem] text-[0.9rem]  text-white">
       <li>
         <a href="#home" class=" home-scroll hover:text-[#dadada] duration-300 hover:underline" data-target="home"
           data-url="/home">מי אנחנו</a>
+      </li>
+
+
+ <li>
+        <a href="#Our-Commitment" class=" home-scroll hover:text-[#dadada] duration-300 hover:underline" data-target="Our-Commitment"
+          data-url="/Our-Commitment">היתרונות שלנו</a>
       </li>
 
       <li>
@@ -81,7 +87,7 @@
       </li>
     </ul>
 
-    <div class=" items-center gap-8 md:flex hidden">
+    <div class=" items-center gap-4 lg:flex hidden">
 
 
       <a href="https://wa.me/972533550054" target="_blank"
@@ -101,7 +107,7 @@
     </div>
 
     <!-- Burger Icon (Mobile) -->
-    <span class="text-white md:hidden flex text-3xl cursor-pointer burger-span">
+    <span class="text-white lg:hidden flex text-3xl cursor-pointer burger-span">
       <i class="fa-solid fa-bars"></i>
     </span>
   </nav>
@@ -125,6 +131,10 @@
       <li>
         <a href="#home" class=" home-scroll hover:text-[#dadada] duration-300 hover:underline" data-target="home"
           data-url="/home">מי אנחנו</a>
+      </li>
+       <li>
+        <a href="#Our-Commitment" class=" home-scroll hover:text-[#dadada] duration-300 hover:underline" data-target="Our-Commitment"
+          data-url="/Our-Commitment">היתרונות שלנו</a>
       </li>
 
       <li>
@@ -352,15 +362,14 @@
       </h1>
 
 
-      <div class="flex md:flex-row flex-col-reverse items-start justify-center md:gap-16 gap-8 w-[100%] mt-8">
+      <div class="flex md:flex-row flex-col-reverse items-start justify-center md:gap-16 gap-8 w-[100%] mt-8 opacity-0 transform translate-y-10 transition-all duration-700 commitment-box">
 
         <div class="md:w-[50%] w-[100%] space-y-6 text-white h-64 border md:p-10 p-6 border-[#4d4d4d] rounded-sm">
           <div class="flex items-center gap-4 ">
 
             <img src="./assets/images/white-checkmark-icon.png" alt="checkmark" class="w-8 h-8">
             <h2 class="text-2xl md:text-3xl font-bold leading-tight ">
-              היתרונות שלנו
-
+מומחיות מבצעית מוכחת
             </h2>
           </div>
 
@@ -397,7 +406,7 @@
 
 
 
-<div class="flex md:flex-row flex-col-reverse items-start justify-center md:gap-16 gap-8 w-[100%] md:mt-8">
+<div class="flex md:flex-row flex-col-reverse items-start justify-center md:gap-16 gap-8 w-[100%]    md:mt-8  opacity-0 transform translate-y-10 transition-all duration-700 commitment-box">
 
         <div class="md:w-[50%] w-[100%] space-y-6 text-white h-64 border md:p-10 p-6 border-[#4d4d4d] rounded-sm">
           <div class="flex items-center gap-4 ">
@@ -548,9 +557,12 @@
   </section>
 
 
-  <section id="third-section"
-    class="text-white mt-8 md:mt-24 pb-10 md:px-6 px-4 opacity-0 transform translate-y-10 transition-all duration-300  "
-    dir="rtl">
+  
+    <section id="third-section"
+  class="text-white mt-8 pt-8 md:pt-16 pb-10 md:px-6 px-4 mx-auto opacity-0 transform translate-y-10 transition-all duration-300 relative
+         before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-[97%] before:h-px before:bg-gray-500"
+  dir="rtl">
+
 
     <div class="flex md:flex-row flex-col items-start justify-center gap-12">
 
@@ -797,7 +809,7 @@
 
       // Handle resizing (close menu if going to desktop)
       $(window).resize(function () {
-        if ($(window).width() >= 768) {
+        if ($(window).width() >= 1024) {
           $("#mobileMenu")
             .addClass("hidden opacity-0 scale-95")
             .css("transform", "translateY(-100%)");
@@ -832,7 +844,7 @@
       ];
 
       const specialitiesElements = document.querySelectorAll(
-        "#contactForm, .formheading, #image-1, .footer-social, #third-section, #Our-Specialities .fade-move-up, #Our-Specialities img, #contact-us h4, #contact-us p,  #Our-Specialities h2, #Our-Specialities h1, #Our-Specialities p, #Our-Specialities span, #Our-Values h1, #footer"
+        "#contactForm, .formheading, #image-1, .commitment-box, .footer-social, #third-section, #Our-Specialities .fade-move-up, #Our-Specialities img, #contact-us h4, #contact-us p,  #Our-Specialities h2, #Our-Specialities h1, #Our-Specialities p, #Our-Specialities span, #Our-Values h1, #footer"
       );
 
       const allElements = [...animatedElements, ...specialitiesElements];
@@ -966,6 +978,20 @@
       });
     });
 
+//js to disable right click
+ document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+        (e.ctrlKey && e.key === "U")
+      ) {
+        e.preventDefault();
+      }
+    });
 
 
 
